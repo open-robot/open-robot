@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find robot_nav)/launch/depthimage_to_laser.launch" />
+  <include file="$(find robot_nav)/launch/hectormapping.launch" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_nav)/rviz/slam.rviz" />
+
+</launch>

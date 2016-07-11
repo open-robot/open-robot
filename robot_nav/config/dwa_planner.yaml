@@ -1,0 +1,15 @@
+DWAPlannerROS:
+  acc_lim_th: 0.1
+  acc_lim_x: 0.05
+  acc_lim_y: 0.05
+  max_trans_vel: 0.2
+  min_trans_vel: -0.2
+  max_vel_x: 0.1
+  min_vel_x: -0.1
+  max_vel_y: 0.1
+  min_vel_y: -0.1
+  max_rot_vel: 0.1
+  min_rot_vel: 0.05
+
+  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.1

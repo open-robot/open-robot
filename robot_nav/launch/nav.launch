@@ -1,0 +1,17 @@
+<launch>
+
+  <!--param name="use_sim_time" value="false" /-->
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find robot_nav)/maps/imma3.yaml" />
+
+  <include file="$(find robot_nav)/launch/depthimage_to_laser.launch" />
+  <node pkg="tf" type="static_transform_publisher" name="broadcaster4" args="0.05 0 0 0 0 0 base_footprint camera_link 100 " />
+  <!--node pkg="tf" type="static_transform_publisher" name="broadcaster" args="0 0 0 0 0 0 base_footprint imu_link 100" /-->
+  <include file="$(find robot_nav)/launch/amcl_omni.launch" />
+  <include file="$(find robot_nav)/launch/move_base4.launch" />
+
+  <node name="map_odom_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /odom 100" />
+
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_nav)/rviz/nav.rviz" /-->
+
+</launch>

@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="translation" default="0.2"/>
+  <arg name="rotation" default="1.0"/>
+  <arg name="joy_dev" default="/dev/input/js0"/>
+
+  <node pkg="robot_teleop_joy" type="robot_teleop_joy.py" name="teleop_joystick" output="screen">
+    <param name="translate" value="$(arg translation)"/>
+    <param name="rotate" value="$(arg rotation)"/>
+  </node>
+
+  <node pkg="joy" type="joy_node" name="joystick" output="screen">
+    <param name="dev" value="$(arg joy_dev)"/>
+  </node>
+
+</launch>

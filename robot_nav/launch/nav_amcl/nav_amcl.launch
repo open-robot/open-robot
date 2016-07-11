@@ -1,0 +1,15 @@
+<launch>
+
+  <!--param name="use_sim_time" value="false" /-->
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find robot_nav)/maps/corridor_3.yaml" />
+
+  <node name="base_link_laser_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link laser 100" />
+
+  <include file="$(find robot_nav)/launch/amcl_omni.launch" />
+  <include file="$(find robot_nav)/launch/move_base3.launch" />
+
+  <!--node name="map_odom_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100" /-->
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_nav)/rviz/nav.rviz" /-->
+
+</launch>

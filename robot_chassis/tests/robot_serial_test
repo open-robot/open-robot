@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+import thread
+import rospy
+import serial
+from robot_chassis.battery import Battery
+from std_msgs.msg import  String
+import struct
+from robot_chassis.protocol import Protocol
+chassis_dev = "/dev/ttyUSB0"
+chassis_dev_baud = 115200
+
+
+# register new device in this dict
+dev_handlers = {Battery.TYPE: Battery()}
+
+import time
+
+def serail_recv():
+    with serial.Serial(chassis_dev, chassis_dev_baud) as ser:
+        while not rospy.is_shutdown():
+            try:
+                line = ser.read(20)
+                dev_handlers[struct.unpack("20B", line)[3]].data_handler(line)
+            except struct.error:
+                print line
+            except KeyError:
+                print(struct.unpack("20B", line))
+                print("Receive a message with invalid type")
+
+
+if __name__ == '__main__':
+    #serail_recv()
+
+    protoc = Protocol(0x01, "2f2H")
+    cmd = protoc.encode([1.2384233,2,3,34])
+    
+    print struct.unpack("20B", cmd)
+
+    print protoc.decode(cmd)
+    
+#    with serial.Serial(chassis_dev, chassis_dev_baud) as ser:
+#        while not rospy.is_shutdown():
+#            ser.write(cmd)
+#            print "----"
+#            time.sleep(0.1)
+
+    
+    
+
+    
+    #$thread.start_new_thread(serail_recv,())

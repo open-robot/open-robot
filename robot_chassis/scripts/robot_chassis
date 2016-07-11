@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+import thread
+import rospy
+import serial
+from robot_chassis.battery import Battery
+from robot_chassis.odom import Odom
+from robot_chassis.speed import Speed
+from robot_chassis.mpu import MPU
+from robot_chassis.move_ctrl import MoveCtrl
+from robot_chassis.servo_ctrl import ServoCtrl
+from std_msgs.msg import  String
+import struct
+
+
+
+chassis_dev = rospy.get_param("/chassis/serial_port", "/dev/ttyS4")
+chassis_dev_baud = 576000
+
+#chassis_dev = "/dev/ttyACM0"
+#chassis_dev_baud = 115200
+
+
+# register new device in this dict
+dev_handlers = {Battery.TYPE: Battery(),
+                Odom.TYPE: Odom(),
+                Speed.TYPE: Speed(),
+                MPU.TYPE: MPU()
+                }
+
+ser = serial.Serial(chassis_dev, chassis_dev_baud)
+def serail_recv():
+        while not rospy.is_shutdown():
+            try:
+                line = ser.readline()
+                while len(line) < 20:
+                    line = line + ser.readline()
+                dev_handlers[struct.unpack("20B", line)[3]].data_handler(line)
+            except struct.error, e:
+                print line
+                print e
+            except KeyError:
+                print(struct.unpack("20B", line))
+                print("Receive a message with invalid type")
+
+
+if __name__ == '__main__':
+    mover = MoveCtrl(ser)
+    servo = ServoCtrl(ser)
+    thread.start_new_thread(mover.start_subscribe, ())
+    thread.start_new_thread(servo.start_subscribe, ())
+    serail_recv()

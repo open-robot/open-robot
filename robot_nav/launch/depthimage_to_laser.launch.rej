@@ -1,0 +1,13 @@
+--- robot_nav/launch/depthimage_to_laser.launch
++++ robot_nav/launch/depthimage_to_laser.launch
+@@ -1,6 +1,10 @@
+ <launch>
+ 
+   <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
++    <param name="scan_height" value="20" type="int"/>
++    <param name="scan_time" value="0.1" type="double"/>
++    <param name="range_min" value="0.45" type="double"/>
++    <param name="range_max" value="6.0" type="double"/>
+     <remap from="image" to="/camera/depth/image_raw"/>
+   </node>
+ 

@@ -1,0 +1,6 @@
+[submodule "rplidar_ros"]
+	path = rplidar_ros
+	url = https://github.com/robopeak/rplidar_ros.git
+[submodule "realsense"]
+	path = realsense
+	url = https://github.com/intel-ros/realsense
