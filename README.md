@@ -39,7 +39,12 @@ Install xtion driver.Run the command "sudo apt-get install ros-indigo-opennni2*"
 Install ros hectoring mapping package.Run the command "sudo apt-get install ros-indigo-hectormapping"
 
 
-## How to start
+## Compile
+
+In your catkin workspace, run the command "catkin_make".
+
+
+## How to Start
 
 1. Make sure the usb device has permission.
 
