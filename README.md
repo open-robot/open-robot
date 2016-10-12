@@ -6,14 +6,14 @@ The main ROS package of open source robot
 Put the ros stack(open_robot) in /src directory of you ros workspace.
 In order to compile the code successfuly,you need install some drivers and ROS packages.
 
-## dependencies
-Follow this page to install ROS in ubuntu 14.04, Desktop-Full Install is recommended.
+## Dependencies
+1. Follow this page to install ROS in ubuntu 14.04, Desktop-Full Install is recommended.
 	http://wiki.ros.org/indigo/Installation/Ubuntu
 
-Install ROS basic packages. Run the command
-	"sudo apt-get install ros-indigo-joy ros-indigo-depthimage-to-laserscan ros-indigo-gmapping ros-indigo-map-server ros-indigo-amcl ros-indigo-move-base ros-indigo-dwa-local-planner ros-indigo-smart-battery-msgs".
+2. Install ROS basic packages. Run the following command
+	"sudo apt-get install ros-indigo-joy ros-indigo-depthimage-to-laserscan ros-indigo-gmapping ros-indigo-map-server ros-indigo-amcl ros-indigo-move-base ros-indigo-dwa-local-planner ros-indigo-smart-battery-msgs ros-indigo-robot-pose-ekf".
 
-Install OpenGL Utility Toolkit.Run the command "sudo apt-get install freeglut3-dev".
+3. Install OpenGL Utility Toolkit.Run the command "sudo apt-get install freeglut3-dev".
 
 ## RealSense
 
@@ -22,7 +22,7 @@ This open robot depends on RealSense camera R200, it needs an additional library
 to complete the driver installation.
 
 
-## submodule
+## Submodule
 
 Several ROS packages are maintained in git sub module, use the following command to fetch the source code
 
@@ -38,6 +38,19 @@ Install kinect driver.Run the command "sudo apt-get install ros-indigo-freenect*
 Install xtion driver.Run the command "sudo apt-get install ros-indigo-opennni2*"
 Install ros hectoring mapping package.Run the command "sudo apt-get install ros-indigo-hectormapping"
 
+
+## How to run open-robot ros stack
+
+1. Make sure the usb device has permission
+     Write a 51-usb-tty.rules file with the following content if you are, like us, using cp2102 as your USB to UART bridge. 
+       SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
+     Then copy this file to /etc/udev/rules.d and reboot.
+
+2. Configuring ROS Environment for open-robot
+    Run the command "echo "source "Your catkin workspace path"/devel/setup.bash" >> ~/.bashrc"
+
+3. Start open-robot
+    Run the command "roslaunch robot_bring start.launch"
 
 # License
 
