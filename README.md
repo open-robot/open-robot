@@ -39,18 +39,19 @@ Install xtion driver.Run the command "sudo apt-get install ros-indigo-opennni2*"
 Install ros hectoring mapping package.Run the command "sudo apt-get install ros-indigo-hectormapping"
 
 
-## How to run open-robot ros stack
+## How to start
 
-1. Make sure the usb device has permission
-     Write a 51-usb-tty.rules file with the following content if you are, like us, using cp2102 as your USB to UART bridge. 
-       SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
-     Then copy this file to /etc/udev/rules.d and reboot.
+1. Make sure the usb device has permission.
 
-2. Configuring ROS Environment for open-robot
-    Run the command "echo "source "Your catkin workspace path"/devel/setup.bash" >> ~/.bashrc"
+     If you are, like us, using cp2102 as your USB to UART bridge, write a 51-usb-tty.rules file with the following content "SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"". Then copy this file to /etc/udev/rules.d and reboot.
 
-3. Start open-robot
-    Run the command "roslaunch robot_bring start.launch"
+2. Configuring ROS Environment for open-robot.
+
+     Run the command "echo "source "Your catkin workspace path"/devel/setup.bash" >> ~/.bashrc"
+
+3. Start open-robot.
+
+     Run the command "roslaunch robot_bring start.launch"
 
 # License
 
