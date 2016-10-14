@@ -4,7 +4,6 @@
 
   <!--node name="map_server" pkg="map_server" type="map_server" args="$(find robot_nav)/maps/corridor_3.yaml" /-->
 
-  <node name="base_link_laser_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link laser 100" />
   <!--node name="map_odom_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100" /-->
 
 

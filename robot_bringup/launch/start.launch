@@ -1,5 +1,6 @@
 <launch>
   <node pkg="tf" type="static_transform_publisher" name="broadcaster1" args="0 0 0 0 0 0 base_footprint base_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="broadcaster2" args="0 0 0 0 0 0 base_link laser 100" />
   <!--include file="$(find robot_bringup)/launch/xtion.launch" /-->
 
   <!--include file="$(find mpu_6050)/launch/open_imu.launch" /-->

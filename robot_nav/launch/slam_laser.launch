@@ -1,6 +1,4 @@
 <launch>
-  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.05 0 0 0 0 0 base_link laser 100" />
-
   <node pkg="map_store" type="map_saver" name="map_saver" output="screen"/>
   <!--node pkg="map_store" type="map_manager" name="map_mananger" output="screen"/-->
   <node pkg="gmapping" type="slam_gmapping" name="simple_gmapping" output="screen">

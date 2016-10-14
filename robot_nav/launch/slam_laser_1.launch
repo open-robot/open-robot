@@ -1,6 +1,4 @@
 <launch>
-  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
-
   <node pkg="gmapping" type="slam_gmapping" name="simple_gmapping" output="screen">
     <param name="base_frame" value="base_link"/>
     <param name="map_update_interval" value="5.0"/>
