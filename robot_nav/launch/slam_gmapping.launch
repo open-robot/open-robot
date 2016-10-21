@@ -1,5 +1,0 @@
-<launch>
-  <!--include file="$(find robot_nav)/launch/depthimage_to_laser.launch"/-->
-  <include file="$(find robot_nav)/launch/gmapping.launch" />
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_nav)/rviz/slam.rviz" />
-</launch>

@@ -1,9 +1,6 @@
 <launch>
-
-  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.05 0 0 0 0 0 base_footprint camera_link 100" />
-
   <node pkg="gmapping" type="slam_gmapping" name="simple_gmapping" output="screen">
-    <param name="base_frame" value="base_footprint"/>
+    <param name="base_frame" value="base_link"/>
     <param name="map_update_interval" value="5.0"/>
     <param name="maxUrange" value="6.0"/>
     <param name="maxRange" value="8.0"/>
@@ -24,7 +21,6 @@
     <param name="angularUpdate" value="0.436"/>
     <param name="temporalUpdate" value="-1.0"/>
     <param name="resampleThreshold" value="0.5"/>
-    <param name="particles" value="80"/>
+    <param name="particles" value="30"/>
   </node>
-
 </launch>
