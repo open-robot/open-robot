@@ -32,17 +32,19 @@
 
 ros::Time current_time;
 //ros::Time last_time;
-double odometry_x,odometry_y,odometry_th;
-double L;
+double odometry_x=0;
+double odometry_y=0;
+double odometry_th=0;
+double L=0;
 nav_msgs::Odometry odom;
 
 void PublishOdometry(int *diff_encoder)
 {
 	float wheel_dis[3];
 	float x,y,th;
-	wheel_dis[0] = diff_encoder[0]*PI*58*0.001/330/4;
-	wheel_dis[1] = diff_encoder[1]*PI*58*0.001/330/4;
-	wheel_dis[2] = diff_encoder[2]*PI*58*0.001/330/4;
+	wheel_dis[0] = diff_encoder[0]*PI*58*0.001/330;
+	wheel_dis[1] = diff_encoder[1]*PI*58*0.001/330;
+	wheel_dis[2] = diff_encoder[2]*PI*58*0.001/330;
 	x = (wheel_dis[0]-wheel_dis[1])/1.732;
 	y = (2*wheel_dis[2]-wheel_dis[0]-wheel_dis[1])/3.0;
 	th = -(wheel_dis[0]+wheel_dis[1]+wheel_dis[2])/(3*L);
@@ -57,6 +59,7 @@ void PublishOdometry(int *diff_encoder)
 		odometry_th += 2*PI;
 
 	geometry_msgs::Quaternion odom_quat;
+	//printf("theta : %f\n",odometry_th);
 	odom_quat = tf::createQuaternionMsgFromYaw(odometry_th);
 
 	//odom.header.stamp = current_time;
@@ -152,12 +155,13 @@ int main(int argc, char **argv)
 	ros::Publisher odom_publisher = n.advertise<nav_msgs::Odometry>("odom", 100);
 	ros::Subscriber sub = n.subscribe("/encoder_cnts", 1000, encoder_cnts_cb);
 	ros::Subscriber sub_1 = n.subscribe("/speed_wheel", 1000, wheel_speed_cb);
-
+/*
 	ros::Rate loop_rate(10);
 	while (ros::ok()) {
 		ros::spinOnce();
 		loop_rate.sleep();
 	}
-
+*/
+	ros::spin();
 	return 0;
 }
