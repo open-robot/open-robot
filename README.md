@@ -37,20 +37,24 @@ Suggestion: If you want to build your own robot, our repositories may save your 
 
 		SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
 
- Then copy this file to /etc/udev/rules.d and reboot.
-2. To configure ROS Environment for open-robot, run the following command
+ Then run the following command in terminal to copy 51-usb-tty.rules to /etc/udev/rules.d and reboot.
+
+		sudo cp -p 51-usb-tty.rules /etc/udev/rules.d
+		sudo reboot
+ 
+2. To configure ROS Environment for open-robot, run the following command in terminal.
 
 		echo "source "Your catkin workspace path"/devel/setup.bash" >> ~/.bashrc
 	
-3. Start open-robot
+3. Start open-robot.
 
-		roslaunch robot_bringup start.launch
+		roslaunch robot_bringup demo_start.launch
 
 
 ## 2D-SLAM on open-robot
 
-1. To run [Google Cartograpger](https://github.com/googlecartographer/cartographer_ros) on open-robot, refer to this [README.rst](https://github.com/open-robot/cartographer_ros/blob/open-robot/README.rst) in [our repository](https://github.com/open-robot/cartographer_ros).  
-2. Aside from Cartograpger, you can use gmapping. After launching [start.launch](https://github.com/open-robot/open-robot/blob/master/robot_bringup/launch/start.launch), run the following command.
+1. To run [Google Cartographer](https://github.com/googlecartographer/cartographer_ros) on open-robot, refer to this [README.rst](https://github.com/open-robot/cartographer_ros/blob/open-robot/README.rst) in [our repository](https://github.com/open-robot/cartographer_ros).  
+2. Aside from Cartograpger, you can use gmapping. After launching [demo_start.launch](https://github.com/open-robot/open-robot/blob/master/robot_bringup/launch/demo_start.launch), run the following command.
 
 		roslaunch robot_nav gmapping.launch
 
