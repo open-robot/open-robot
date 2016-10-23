@@ -46,7 +46,7 @@ Suggestion: If you want to build your own robot, our repos may save your time.
 	
 3. Start open-robot
 
-		roslaunch robot_bring start.launch
+		roslaunch robot_bringup start.launch
 
 
 ## 2D-SLAM on open-robot
