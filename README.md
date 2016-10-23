@@ -5,12 +5,13 @@
 ## Purpose
 Open-robot is the main ROS package of [Open Source Robot](https://github.com/open-robot). 
 You can also find the [hardware](https://github.com/open-robot/Hardware) and [Arduino firmware](https://github.com/open-robot/ArduinoFirmware) repository in that project.   
-Suggestion: If you want to build your own robot, our repositories may save your time.
+Suggestion: If you want to build your own robot, our repositories may save your time.  
+![hardware](https://github.com/open-robot/Hardware/tree/master/Parts/Assembly_Drawing)
 
 
 ## Dependencies
-1. [Install ROS](http://wiki.ros.org/indigo/Installation/Ubuntu) in ubuntu 14.04, Desktop-Full Install is recommended  	
-1. Some ROS packages are needed. Run the following command to install
+1. [Install ROS](http://wiki.ros.org/indigo/Installation/Ubuntu) in ubuntu 14.04, Desktop-Full Install is recommended.  	
+1. Some ROS packages are needed. Run the following command to install.
 
 		sudo apt-get install ros-indigo-joy ros-indigo-depthimage-to-laserscan ros-indigo-gmapping ros-indigo-map-server ros-indigo-amcl ros-indigo-move-base ros-indigo-dwa-local-planner ros-indigo-smart-battery-msgs ros-indigo-robot-pose-ekf ros-indigo-map-server ros-indigo-costmap-2d
 
