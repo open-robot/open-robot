@@ -1,6 +1,6 @@
 <launch>
 
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find robot_nav)/maps/corridor_3.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find robot_nav)/map/imma_lab.yaml" />
 
   <include file="$(find robot_nav)/launch/amcl_omni.launch" />
   <include file="$(find robot_nav)/launch/move_base.launch" />

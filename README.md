@@ -60,6 +60,16 @@ More information about Open Source Robot on our [web page.](http://www.ros-robot
 		roslaunch robot_slam gmapping.launch
 
 
+## 2D-Navigation on open-robot
+1. Start open-robot.
+
+		roslaunch robot_bringup demo_start.launch
+
+2. Launch nav.launch after a map having been built.
+ 
+		roslaunch robot_navi nav.launch
+
+
 ## RealSense(optional)
 
 Visual-SLAM is to be enabled soon. So now, Open-robot just uses RealSense camera R200 to capture images. It needs an additional library, refer to the guide at
