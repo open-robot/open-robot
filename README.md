@@ -55,7 +55,7 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 
 1. To run [Google Cartographer](https://github.com/googlecartographer/cartographer_ros) on open-robot, refer to this [README.rst](https://github.com/open-robot/cartographer_ros/blob/open-robot/README.rst) in [our repository](https://github.com/open-robot/cartographer_ros).  
 
-2. Aside from Cartograpger, you can use gmapping. After launching [demo_start.launch](https://github.com/open-robot/open-robot/blob/master/robot_bringup/launch/demo_start.launch), run the following command.
+2. Aside from Cartographger, you can use gmapping. After launching [demo_start.launch](https://github.com/open-robot/open-robot/blob/master/robot_bringup/launch/demo_start.launch), run the following command.
 
 		roslaunch robot_slam gmapping.launch
 
