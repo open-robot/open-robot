@@ -3,10 +3,9 @@
 
 
 ## Purpose
-Open-robot is the main ROS package of [Open Source Robot](https://github.com/open-robot). 
-You can also find the [hardware](https://github.com/open-robot/Hardware) and [Arduino firmware](https://github.com/open-robot/ArduinoFirmware) repository in that project.   
-Suggestion: If you want to build your own robot, our repositories may save your time.  
-More information about Open Source Robot on our [web page.](http://www.ros-robot.com/)
+Open-robot is the main ROS package of [Open Source Robot](https://github.com/open-robot).  
+[Open Source Robot](https://github.com/open-robot) now provides 2D-SLAM and Navigaiton functionalities. You can also find the [hardware](https://github.com/open-robot/Hardware) and [Arduino firmware](https://github.com/open-robot/ArduinoFirmware) repository in that project. If you want to build your own robot, our repositories may save your time.  
+More information about Open Source Robot is on our [web page.](http://www.ros-robot.com/)
 
 
 ## Dependencies
