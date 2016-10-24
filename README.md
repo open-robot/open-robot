@@ -55,9 +55,12 @@ More information about Open Source Robot on our [web page.](http://www.ros-robot
 ## 2D-SLAM on open-robot
 
 1. To run [Google Cartographer](https://github.com/googlecartographer/cartographer_ros) on open-robot, refer to this [README.rst](https://github.com/open-robot/cartographer_ros/blob/open-robot/README.rst) in [our repository](https://github.com/open-robot/cartographer_ros).  
+
 2. Aside from Cartograpger, you can use gmapping. After launching [demo_start.launch](https://github.com/open-robot/open-robot/blob/master/robot_bringup/launch/demo_start.launch), run the following command.
 
 		roslaunch robot_slam gmapping.launch
+
+3. Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
 
 
 ## 2D-Navigation on open-robot
@@ -68,6 +71,9 @@ More information about Open Source Robot on our [web page.](http://www.ros-robot
 2. Launch nav.launch after a map having been built.
  
 		roslaunch robot_navi nav.launch
+
+3. Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
+
 
 
 ## RealSense(optional)
