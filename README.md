@@ -10,10 +10,11 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 
 ## Dependencies
 1. [Install ROS](http://wiki.ros.org/indigo/Installation/Ubuntu) in ubuntu 14.04, Desktop-Full Install is recommended.  	
-1. Some ROS packages are needed. Run the following command to install.
+2. Some ROS packages are needed. Run the following command to install.
 
-		sudo apt-get install ros-indigo-joy ros-indigo-depthimage-to-laserscan ros-indigo-gmapping ros-indigo-map-server ros-indigo-amcl ros-indigo-move-base ros-indigo-dwa-local-planner ros-indigo-smart-battery-msgs ros-indigo-robot-pose-ekf ros-indigo-map-server ros-indigo-costmap-2d
-
+		sudo apt-get install ros-indigo-joy ros-indigo-smart-battery-msgs 
+		sudo apt-get install ros-indigo-gmapping ros-indigo-robot-pose-ekf ros-indigo-map-server
+		sudo apt-get install ros-indigo-costmap-2d ros-indigo-dwa-local-planner ros-indigo-move-base ros-indigo-amcl
 
 ## Building
 1. Clone open-robot in /src directory of your ros workspace.
