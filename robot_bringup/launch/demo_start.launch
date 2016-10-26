@@ -1,6 +1,6 @@
 <launch>
   <node pkg="tf" type="static_transform_publisher" name="broadcaster1" args="0 0 0 0 0 0 base_footprint base_link 100" />
-  <node pkg="tf" type="static_transform_publisher" name="broadcaster2" args="0 0 0 0 0 0 base_link base_laser_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="broadcaster2" args="0 0 0 0 0 0 base_link laser 100" />
 
   <include file="$(find robot_teleop_joy)/launch/xbox360_teleop.launch" >
     <arg name="translation" value="0.2"/>
@@ -9,17 +9,29 @@
   </include>
 
   <!-- Start Benewake LIDAR /-->
-  <include file="$(find serial_parse_publish)/launch/serial_parse_publish.launch" >
-  </include>
+  <!-- include file="$(find serial_parse_publish)/launch/serial_parse_publish.launch" >
+  </include/-->
 
-  <!-- Start rpliar /-->
-  <!-- node name="rplidarNode"  pkg="rplidar_ros"  type="rplidarNode" output="screen">
-  <param name="serial_port"         type="string" value="/dev/ttyUSB1"/>
-  <param name="serial_baudrate"     type="int"    value="115200"/>
-  <param name="frame_id"            type="string" value="laser"/>
-  <param name="inverted"            type="bool"   value="false"/>
-  <param name="angle_compensate"    type="bool"   value="true"/>
-  </nodei/-->
+  <!-- Start RPlidar /-->
+  <node name="rplidarNode"  pkg="rplidar_ros"  type="rplidarNode" output="screen">
+    <param name="serial_port"         type="string" value="/dev/ttyUSB1"/>
+    <param name="serial_baudrate"     type="int"    value="115200"/>
+    <param name="frame_id"            type="string" value="laser"/>
+    <param name="inverted"            type="bool"   value="false"/>
+    <param name="angle_compensate"    type="bool"   value="true"/>
+  </node>
+
+  <!-- Start Hokuyo_LX20/-->
+  <!-- node name="hokuyo_node" pkg="urg_node" type="urg_node" output="screen">
+    <param name="ip_address" type="string" value="192.168.0.10"/>
+    <param name="ip_port" type="int" value="10940"/>
+    <param name="intensity" type="bool" value="false"/>
+    <param name="min_ang" value="-2.2689"/>
+    <param name="max_ang" value="2.2689"/>
+  </node/-->
+
+  <!-- include file="$(find sick_tim)/launch/sick_tim551_2050001.launch">
+  </include/-->
 
   <node pkg="robot_chassis" name="chassis" type="robot_chassis" output="screen">
     <param name="serial_port"   type="string" value="/dev/ttyUSB0"/>
@@ -40,11 +52,5 @@
     <param name="output_frame" value="odom"/>
     <param name="base_footprint_frame" value="base_footprint"/>
   </node>
-
-  <!-- node pkg="image_transport" name="trans" type="republish"  args="raw in:=/camera/color/image_raw  compressed out:=/trans_image">
-    <remap from="/trans_image/compressed" to="/compressed_image"/>
-  </node/-->
-
-  <!-- include file="$(find realsense_camera)/launch/realsense_r200_nodelet_standalone_manual.launch" /-->
 
 </launch>
