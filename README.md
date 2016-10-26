@@ -40,12 +40,12 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 
  Then run the following command in terminal to copy 51-usb-tty.rules to /etc/udev/rules.d and reboot.
 
-		sudo cp -p 51-usb-tty.rules /etc/udev/rules.d
+		sudo cp -p 51-usb-tty.rules /etc/udev/rules.d/51-usb-tty.rules
 		sudo reboot
  
 2. To configure ROS Environment for open-robot, run the following command in terminal.
 
-		echo "source "Your catkin workspace path"/devel/setup.bash" >> ~/.bashrc
+		echo "source <Your catkin workspace path>/devel/setup.bash" >> ~/.bashrc
 	
 3. Start open-robot.
 
@@ -60,7 +60,7 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 
 		roslaunch robot_slam gmapping.launch
 
-3. Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
+3. (Optional) Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
 
 
 ## 2D-Navigation on open-robot
@@ -72,7 +72,7 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
  
 		roslaunch robot_navi nav.launch
 
-3. Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
+3. (Optional) Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
 
 
 
