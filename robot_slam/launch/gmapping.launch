@@ -23,4 +23,5 @@
     <param name="resampleThreshold" value="0.5"/>
     <param name="particles" value="30"/>
   </node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_slam)/rviz/slam.rviz" />
 </launch>

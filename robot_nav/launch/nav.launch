@@ -5,6 +5,6 @@
   <include file="$(find robot_nav)/launch/amcl_omni.launch" />
   <include file="$(find robot_nav)/launch/move_base.launch" />
 
-  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_nav)/rviz/nav.rviz" /-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_nav)/rviz/nav.rviz" />
 
 </launch>
