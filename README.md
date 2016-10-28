@@ -70,7 +70,7 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 
 2. Launch nav.launch after a map having been built.
  
-		roslaunch robot_navi nav.launch
+		roslaunch robot_nav nav.launch
 
 3. (Optional) Start rviz in a remote computer. About how to [run ROS across multiple machines.](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)
 
