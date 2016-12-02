@@ -15,6 +15,7 @@ More information about Open Source Robot is on our [web page.](http://www.ros-ro
 		sudo apt-get install ros-indigo-joy ros-indigo-smart-battery-msgs 
 		sudo apt-get install ros-indigo-gmapping ros-indigo-robot-pose-ekf ros-indigo-map-server
 		sudo apt-get install ros-indigo-costmap-2d ros-indigo-dwa-local-planner ros-indigo-move-base ros-indigo-amcl
+		sudo apt-get install ros-indigo-librealsense
 
 ## Building
 1. Clone open-robot in /src directory of your ros workspace.
