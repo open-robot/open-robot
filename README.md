@@ -7,6 +7,8 @@ Open-robot is the main ROS package of [Open Source Robot](https://github.com/ope
 [Open Source Robot](https://github.com/open-robot) now provides 2D-SLAM and Navigaiton functionalities. You can also find the [hardware](https://github.com/open-robot/Hardware) and [Arduino firmware](https://github.com/open-robot/ArduinoFirmware) repository in that project. If you want to build your own robot, our repositories may save your time.  
 More information about Open Source Robot is on our [web page.](http://www.ros-robot.com/)
 
+## Demo Video
+[![Open source mobile robot video](https://i.ytimg.com/vi/PIggmwuGv_8/hqdefault.jpg)](https://www.youtube.com/embed/PIggmwuGv_8)
 
 ## Dependencies
 1. [Install ROS](http://wiki.ros.org/indigo/Installation/Ubuntu) in ubuntu 14.04, Desktop-Full Install is recommended.  	
